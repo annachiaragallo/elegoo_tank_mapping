@@ -4,7 +4,7 @@
 /* -------------------- DEVICE-SPECIFIC PARAMETERS -----------------------*/
 
  /*Device's address*/
- static const char OWL_BOT_ADDR[] = "48:87:2D:14:C3:12";
+ static const char OWL_BOT_ADDR[] = "AA:BB:CC:DD:EE:FF";
 
  /*Values stored in "M" key of Json Docs received from BLE device*/
  #define OBS_AVOID_MODE 0
