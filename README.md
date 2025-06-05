@@ -29,7 +29,18 @@ add_subdirectory(examples/elegoo_tank_mapping)
 ```
 and place the `elegoo_tank_mapping` directory in the `gattlib/examples` folder. 
 
-Build project - step 2: preparing the mapping folder
+Build project - step 2: inserting your own Tank's address
+===============================
+In `elegoo_tank.h`, replace the address indicated in
+```
+		...
+/*Device's address*/
+static const char OWL_BOT_ADDR[] = "AA:BB:CC:DD:EE:FF";
+		...
+```
+with the address of your own Tank OwlBot. You can find it by using command-line tools such as `bluetoothctl` or `gatttool`. 
+
+Build project - step 3: preparing the mapping folder
 ===============================
 Before building the library again, you should decide where you
 want the mappiing-related `.csv` and `.svg` to be generated. The default path can be found at the beginning of `elegoo_tank_mapping/include/draw.h`:
@@ -43,7 +54,7 @@ want the mappiing-related `.csv` and `.svg` to be generated. The default path ca
 You can replace the *dot* with a path of your choice. If you leave it as it is, the files will be created in the same folder where the executable gets
 generated. This might be annoying because you'd have to manually delete them or add a target rule for the `make clean` command. 
 
-Build project - step 3: rebuilding the library
+Build project - step 4: rebuilding the library
 ===============================
 Now rebuild the library. From `gattlib/build` directory:
 
@@ -53,7 +64,7 @@ make
 ```
 Afterwards you will find your executable, called `elegoo_main`, in `gattlib/build/examples/elegoo_tank_mapping`.
 
-Build project - step 4: change the code on the Arduino Board
+Build project - step 5: change the code on the Arduino Board
 ===============================
 - Download [Elegoo' source code for the OwlBot](https://www.elegoo.com/blogs/arduino-projects/elegoo-owlbot-smart-robot-tank-tutorial).
 - Navigate to `ELEGOO OwlBot Tank Tutorial 2021.05.08/ELEGOO OwlBot Tank Tutorial 2021.05.08/02 Manual & Main Code & APP/02 Main Program/TB6612/OwlBotTankKit_Driver_20201210` (or `ELEGOO OwlBot Tank Tutorial 2021.05.08/ELEGOO OwlBot Tank Tutorial 2021.05.08/02 Manual & Main Code & APP/02 Main Program/DRV8835/OwlBotTankKit_Driver_20201210`, depending on which chip is on your board)
