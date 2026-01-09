@@ -99,7 +99,7 @@ CONSUMING GATTLIB
 Installing a Gattlib Provider
 ===============================
 
-* In order to consume gattlib, you need to install it in a chosen directory. It can for example be named `gattlib_provider`.
+*In case you have trouble using gattlib, try to to install it in a chosen directory. It can for example be named `gattlib_provider`.
 Follow these steps:
 
 ```
@@ -135,7 +135,7 @@ if that's the output you've got.
 Building examples (both gattlib's and your own)
 =================================================
 
-Having done this, you should be able to generate the build files for any of the source code files located into the `examples` folder, including new ones made by yourself, with some little modification to their `CMakeLists.txt` (from now on referred to as **CML**. 
+Having done this, you should be able to generate the build files for any of the source code files located into the `examples` folder, including new ones made by yourself, with some little modification to their `CMakeLists.txt` (from now on referred to as **CML**). 
 
 * To build `discover.c`, for example, its CML should look like this:
 
@@ -211,10 +211,10 @@ Less minimalistic projects
 As you can see, `discover`, like all other examples, only consists in a `.c` file, but the steps to build a more structured project are the same, as long as the CML is written correctly. For example a project like this:
 ```
 + project
-     ------ src
-          ------ main.c	
-     ------ include
-          ------ main.h
+    |-- src
+         |------ main.c	
+    |-- include
+         |------ main.h
 ```
 
 would require a CML similar to this:
